@@ -8,7 +8,7 @@ function AddTransactionModal({ hide, refreshTransactions, userId }) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false); // Loading state for the submit button
 
-  const apiUrl = "http://localhost:3000"; // Adjust your API URL as needed
+ const apiUrl = import.meta.env.VITE_ENDPOINT_URL; // Adjust your API URL as needed
 
   // Handle form submission to add a new transaction
   const handleSubmit = async (e) => {

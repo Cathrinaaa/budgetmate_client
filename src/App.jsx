@@ -12,11 +12,13 @@ const App = () => {
 
   const navigate = useNavigate();
 
+  const apiUrl = import.meta.env.VITE_ENDPOINT_URL;
+
   // Handle login
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/check-user', {
+      const response = await axios.post(`${apiUrl}/check-user`, {
         username,
         password,
       });
@@ -40,7 +42,7 @@ const App = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/add-user', {
+      const response = await axios.post(`${apiUrl}/add-user`, {
         username,
         password,
         fname,

@@ -15,7 +15,7 @@ function BudgetMateDashboard() {
   const [editAmount, setEditAmount] = useState('');
   const navigate = useNavigate();
 
-  const apiUrl = "http://localhost:3000";
+  const apiUrl = import.meta.env.VITE_ENDPOINT_URL;
 
   useEffect(() => {
     const saved = localStorage.getItem('monthlyBudget');
